@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
   namespace :admin do
-    resources :genres, only: [:index, :create, :edit, :update]
+    resources :production_processes, only: [:index, :create, :edit, :update]
     resources :products, only: [:index, :new, :show, :create, :show, :edit, :update]
     resources :workers, only: [:index, :show, :edit, :update]
     resources :progresses, only: [:index, :show]

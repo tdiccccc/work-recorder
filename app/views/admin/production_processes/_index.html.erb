@@ -1,0 +1,16 @@
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th>工程</th>
+      <th></th>
+    </tr>
+  </thead>
+  <% processes.each do |process| %>
+  <tbody>
+    <tr>
+      <td><%= process.name %></td>
+      <td><%= link_to "編集する", edit_admin_production_process_path(process.id), class: "btn btn-success" %></td>
+    </tr>
+  </tbody>
+  <%end%>
+</table>

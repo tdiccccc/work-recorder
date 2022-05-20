@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_05_20_060000) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer "production_processes_id", null: false
+    t.integer "production_process_id", null: false
     t.string "name", null: false
     t.text "introduction", null: false
     t.datetime "created_at", precision: 6, null: false

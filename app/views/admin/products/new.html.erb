@@ -1,2 +1,37 @@
-<h1>Admin::Products#new</h1>
-<p>Find me in app/views/admin/products/new.html.erb</p>
+<div class="container">
+  <%= form_with model: [:admin,@product] do |f| %>
+    <div class="row">
+      <h3 class="m-3 bg-light">商品新規登録</h3>
+    </div>
+
+    <div class="field row">
+      <div class="col-2"><%= f.label :name,"商品名" %></div>
+      <div class="col-6">
+        <%= f.text_field :name, class: "form-control mb-2",placeholder: "名前を入力してください" %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="col-2"><%= f.label :production_process_id,"工程" %></div>
+      <div class="col-4">
+        <%= f.collection_select(:production_process_id, @processes, :id, :name, {prompt: "工程を選択してください"}, {class: "form-control mb-2"}) %>
+      </div>
+    </div>
+
+    <div class="genre field row">
+      <div class="col-2"><%= f.label :introduction,"商品説明" %></div>
+      <div class="col-6">
+        <%= f.text_area :introduction, class: "form-control mb-2",placeholder: "商品の説明を入力してください" %>
+      </div>
+    </div>
+
+    <div class="row my-5">
+      <div class="col-2"></div>
+      <div class="col-6 form-inline">
+        <div class="mr-5">
+          <%= f.submit "新規登録", class: "btn btn-success" %>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>

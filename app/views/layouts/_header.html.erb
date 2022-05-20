@@ -18,8 +18,8 @@
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to admin_genres_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
-                <i class="fas fa-history"></i> ジャンル一覧
+              <%= link_to admin_production_processes_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-history"></i> 工程一覧
               <% end %>
             </li>
             <li class="nav-item">
@@ -66,8 +66,8 @@
               <%# end %>
             </li>
             <li class="nav-item">
-              <%= link_to products_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
-                <i class="fas fa-list"></i> 商品一覧
+              <%= link_to about_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-list"></i> about
               <% end %>
             </li>
             <li class="nav-item">
@@ -78,6 +78,11 @@
             <li class="nav-item">
               <%= link_to new_worker_session_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
                 <i class="fas fa-sign-in-alt"></i> ログイン
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_session_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-sign-in-alt"></i> 管理者ログイン
               <% end %>
             </li>
           <% end %>

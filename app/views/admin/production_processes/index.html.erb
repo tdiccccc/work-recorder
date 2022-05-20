@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <h3 class="my-5 bg-light">工程一覧・追加</h3>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div id="process-form">
+        <%= render 'form' , process: @process %>
+      </div>
+      <div id="process-table">
+        <%= render 'index', processes: @processes %>
+      </div>
+    </div>
+    <%= paginate @processes %>
+  </div>
+</div>
