@@ -1,0 +1,2 @@
+class ProductionProcess < ApplicationRecord
+end

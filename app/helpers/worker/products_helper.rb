@@ -1,0 +1,2 @@
+module Worker::ProductsHelper
+end
