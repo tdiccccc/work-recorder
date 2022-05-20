@@ -1,0 +1,97 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
+    <div class="container">
+
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
+            <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <% if admin_signed_in? %>
+            <li class="nav-item">
+              <%= link_to admin_progresses_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-list"></i> 進捗状況
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_products_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-users"></i> 商品一覧
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_genres_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-history"></i> ジャンル一覧
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_workers_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-layer-group"></i> 従業員一覧
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-sign-out-alt"></i> ログアウト
+              <% end %>
+            </li>
+          <% elsif worker_signed_in? %>
+            <p class="text-white mr-2 my-auto text-nowrap"><small></small><%= current_worker.last_name %><%= current_worker.first_name %><small></small></p>
+            <li class="nav-item">
+              <%= link_to worker_path(current_worker.id), class: "nav-link text-light text-nowrap btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-user-circle"></i> マイページ
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to progresses_path, class: "nav-link text-light text-nowrap btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-list"></i> 進捗状況
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to products_path, class: "nav-link text-light text-nowrap btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-shopping-cart"></i> 商品一覧
+              <% end %>
+            </li>
+              <li class="nav-item">
+              <%= link_to workers_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-layer-group"></i> 従業員一覧
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_worker_session_path, method: :delete, class:"nav-link text-light text-nowrap btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-sign-out-alt"></i> ログアウト
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%#= link_to about_path, class: "nav-link text-light btn btn-primary mr-1 mb-1" do %>
+                <!--<i class="fas fa-link"></i> About-->
+              <%# end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to products_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-list"></i> 商品一覧
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_worker_registration_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-user-plus"></i> 新規登録
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_worker_session_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-sign-in-alt"></i> ログイン
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+        <!--<div>-->
+          <%#= search_form_for @search, url: products_path do |f| %>
+            <%#= f.text_field :name_cont %>
+            <%#= f.submit "検索" %>
+          <%# end %>
+          <!--<form class="d-flex">-->
+          <!--  <input class="form-control mr-2 mb-1" type="search" placeholder="Search" aria-label="Search">-->
+          <!--  <button class="btn btn-outline-success mb-1" type="submit">Search</button>-->
+          <!--</form>-->
+        </div>
+      </div>
+    </div>
+  </nav>
