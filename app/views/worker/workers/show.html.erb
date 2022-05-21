@@ -6,6 +6,7 @@
     </div>
 
     <div class='col-md-8 offset-md-1'>
+      <%= render 'worker/progress-count/weak-chart', progresses: @progresses %>
       <h3 class="my-5 bg-light">件数の前日比・前週比</h3>
       <%= render 'worker/progress-count/day-count', today_progress: @today_progress, yesterday_progress: @yesterday_progress %>
       <%= render 'worker/progress-count/weak-count', this_week_progress: @this_week_progress, last_week_progress: @last_week_progress %>
