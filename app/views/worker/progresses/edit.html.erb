@@ -1,29 +1,17 @@
-<h1>timer</h1>
-
-
-
-<% if @progress.begin_time == nil %>
-  <%= form_with model: @progress, url: progresses_start_path, method: :patch do |f| %>
-    <%= f.hidden_field :progress_id %>
-    <%= f.submit '開始', class: "btn btn-success" %>
-  <%end%>
-
-  <%= form_with model: @progress, url: progresses_finish_path, method: :patch do |f| %>
-    <%= f.hidden_field :progress_id %>
-    <%= f.submit '完了', class: "btn btn-secondary", disabled: true %>
-  <%end%>
-
-<% elsif @progress.end_time == nil %>
-  <%= form_with model: @progress, url: progresses_start_path, method: :patch do |f| %>
-    <%= f.hidden_field :progress_id %>
-    <%= f.submit '開始', class: "btn btn-secondary", disabled: true %>
-  <%end%>
-
-  <%= form_with model: @progress, url: progresses_finish_path, method: :patch do |f| %>
-    <%= f.hidden_field :progress_id %>
-    <%= f.submit '完了', class: "btn btn-success" %>
-  <%end%>
-
-<%else%>
-  非表示
-<%end%>
+<div class="container">
+  <%= render 'timer', progress: @progress %>
+  <div class="row justify-content-center my-5">
+    <div class="col-md-10">
+      <h4 class="bg-light px-2">進捗商品編集</h4>
+      <%= form_with model: @progress do |f| %>
+        <div class="row my-4 form-group">
+          <%= f.label "部数", class: "col-sm-2 col-form-label" %>
+          <div class="col-sm-6">
+          <%= f.text_field :product_count, class: "form-control" %>
+          </div>
+          <%= f.submit "部数を変更する", class: "btn btn-success" %>
+        </div>
+      <%end%>
+    </div>
+  </div>
+</div>

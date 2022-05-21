@@ -1,4 +1,7 @@
 class Worker::WorkersController < ApplicationController
+  before_action :authenticate_worker!
+  before_action :ensure_correct_worker, only: [:edit, :update]
+
   def index
     @workers = Worker.all
   end
@@ -29,4 +32,11 @@ class Worker::WorkersController < ApplicationController
     params.require(:worker).permit(:first_name, :last_name, :email)
   end
 
+  #自分の従業員情報のみ編集可能
+  def ensure_correct_worker
+    @worker = Worker.find(params[:id])
+    unless @worker == current_worker
+      redirect_to worker_path(current_worker)
+    end
+  end
 end

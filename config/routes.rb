@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     get 'about' => 'homes#about', as: 'about'
     resources :workers, only: [:index, :show, :edit, :update]
     resources :products, only: [:index, :show]
-    resources :progresses, only: [:index, :show, :create, :edit]
+    resources :progresses, only: [:index, :show, :create, :edit, :update]
 
     patch 'progresses/:id/start' => 'progresses#start', as: 'progresses_start' #商品開始
     patch 'progresses/:id/finish' => 'progresses#finish', as: 'progresses_finish' #商品終了

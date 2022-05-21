@@ -2,6 +2,8 @@ class Progress < ApplicationRecord
   belongs_to :worker
   belongs_to :product
 
+  validates :product_count, presence: true
+
   def time_diff
     (end_time - begin_time) / 60 / 60
   end

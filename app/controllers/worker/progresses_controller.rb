@@ -3,12 +3,13 @@ class Worker::ProgressesController < ApplicationController
   before_action :ensure_correct_worker, only: [:edit, :update]
 
   def create
+    #@product = Product.find(params[:id])
     @progress = Progress.new(progress_params)
     @progress.worker_id = current_worker.id
     if @progress.save
-      redirect_to edit_progress_path(@progress)
+      redirect_to edit_progress_path(@progress), notice: 'タイマーを開始してください'
     else
-      redirect_to product_path(product.id)
+      redirect_to product_path(@product), notice: '部数を入力してください'
     end
   end
 
@@ -18,6 +19,10 @@ class Worker::ProgressesController < ApplicationController
     #@progress.id = Progress.where(end_time: nil)
   end
 
+  def update
+    @progress = Progress.find(params[:id])
+
+  end
   def start
     @progress = Progress.find(params[:id])
     @progress.begin_time = DateTime.now
@@ -52,6 +57,9 @@ class Worker::ProgressesController < ApplicationController
     params.require(:progress).permit(:product_id, :worker_id, :product_count, :begin_time, :end_time)
   end
 
+  def product_params
+
+  end
   #自分の実績のみ編集可能
   def ensure_correct_worker
     @progress = Progress.find(params[:id])

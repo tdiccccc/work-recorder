@@ -10,7 +10,7 @@ class Worker::ProductsController < ApplicationController
 
   private
 
-  def progress_params
-    params.require(:progress).permit(:product_id, :worker_id, :product_count, :begin_time, :end_time)
-  end
+  # def progress_params
+  #   params.require(:progress).permit(:product_id, :worker_id, :product_count, :begin_time, :end_time)
+  # end
 end
