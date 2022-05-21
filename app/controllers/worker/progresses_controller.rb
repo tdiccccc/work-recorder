@@ -1,4 +1,6 @@
 class Worker::ProgressesController < ApplicationController
+  before_action :authenticate_worker!
+  before_action :ensure_correct_worker, only: [:edit, :update]
 
   def create
     @progress = Progress.new(progress_params)
@@ -49,4 +51,13 @@ class Worker::ProgressesController < ApplicationController
   def progress_params
     params.require(:progress).permit(:product_id, :worker_id, :product_count, :begin_time, :end_time)
   end
+
+  #自分の実績のみ編集可能
+  def ensure_correct_worker
+    @progress = Progress.find(params[:id])
+    unless @progress.worker == current_worker
+      redirect_to worker_path(current_worker)
+    end
+  end
+
 end
