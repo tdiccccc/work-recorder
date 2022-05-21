@@ -11,7 +11,7 @@ class Worker::ProgressesController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    #@product = Product.find(params[:id])
     @progress = Progress.find(params[:id])
     #@progress.id = Progress.where(end_time: nil)
   end

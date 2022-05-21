@@ -1,0 +1,25 @@
+<div class = "table_width">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>今日の実績</th>
+        <th>前日の実績</th>
+        <th>前日比</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= today_progress.count %>件</td>
+        <td><%= yesterday_progress.count %>件</td>
+    　   <td>
+          <% if yesterday_progress.count == 0 %>
+            前日の実績はありません
+          <% else %>
+       　    <% @the_day_before =   @today_progress.count / @yesterday_progress.count.to_f  %>
+       　    <%= (@the_day_before * 100).round %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

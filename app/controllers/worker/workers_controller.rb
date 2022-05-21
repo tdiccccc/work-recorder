@@ -5,6 +5,12 @@ class Worker::WorkersController < ApplicationController
 
   def show
     @worker = Worker.find(params[:id])
+    @progresses = @worker.progresses
+
+    @today_progress = @progresses.created_today
+    @yesterday_progress = @progresses.created_yesterday
+    @this_week_progress = @progresses.created_this_week
+    @last_week_progress = @progresses.created_last_week
   end
 
   def edit
