@@ -4,7 +4,7 @@ class CreateProgresses < ActiveRecord::Migration[6.1]
       t.integer :worker_id, null:false
       t.integer :product_id, null:false
       t.integer :product_count, null:false
-      t.datetime :begin_time, null:false
+      t.datetime :begin_time
       t.datetime :end_time
       t.timestamps
     end

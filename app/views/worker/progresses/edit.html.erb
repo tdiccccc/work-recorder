@@ -1,0 +1,29 @@
+<h1>timer</h1>
+
+
+
+<% if @progress.begin_time == nil %>
+  <%= form_with model: @progress, url: progresses_start_path, method: :patch do |f| %>
+    <%= f.hidden_field :progress_id %>
+    <%= f.submit '開始', class: "btn btn-success" %>
+  <%end%>
+
+  <%= form_with model: @progress, url: progresses_finish_path, method: :patch do |f| %>
+    <%= f.hidden_field :progress_id %>
+    <%= f.submit '完了', class: "btn btn-secondary", disabled: true %>
+  <%end%>
+
+<% elsif @progress.end_time == nil %>
+  <%= form_with model: @progress, url: progresses_start_path, method: :patch do |f| %>
+    <%= f.hidden_field :progress_id %>
+    <%= f.submit '開始', class: "btn btn-secondary", disabled: true %>
+  <%end%>
+
+  <%= form_with model: @progress, url: progresses_finish_path, method: :patch do |f| %>
+    <%= f.hidden_field :progress_id %>
+    <%= f.submit '完了', class: "btn btn-success" %>
+  <%end%>
+
+<%else%>
+  非表示
+<%end%>

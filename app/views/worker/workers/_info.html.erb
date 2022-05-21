@@ -27,11 +27,12 @@
     <% if current_worker != worker %>
       <td><%#= render "relationships/btn", user: user %></td>
     <% else %>
-      <%= link_to  edit_worker_path(worker), class: "btn btn-outline-secondary btn-block" do %>
+      <%= link_to  edit_worker_path(worker), class: "btn btn-outline-secondary btn-block " do %>
         <i class="fas fa-user-cog"></i>
       <%end%>
     <%end%>
     <td>
+      <%= link_to '実績', worker_index_path(worker), class: 'btn btn-success my-3' %>
       <%# if current_user != user && current_user.following?(user) && user.following?(current_user) %>
         <%#= link_to 'chatを始める', chat_path(user.id), class: "ml-3" %>
       <%# end %>

@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2022_05_20_060000) do
     t.integer "worker_id", null: false
     t.integer "product_id", null: false
     t.integer "product_count", null: false
-    t.datetime "begin_time", null: false
+    t.datetime "begin_time"
     t.datetime "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -20,10 +20,11 @@ Rails.application.routes.draw do
     get 'about' => 'homes#about', as: 'about'
     resources :workers, only: [:index, :show, :edit, :update]
     resources :products, only: [:index, :show]
-    resources :progresses, only: [:index, :show, :create]
+    resources :progresses, only: [:index, :show, :create, :edit]
 
-    post 'progresses/start' => 'progresses#start' #商品開始
-    post 'progresses/finish' => 'progresses#finish' #商品終了
+    patch 'progresses/:id/start' => 'progresses#start', as: 'progresses_start' #商品開始
+    patch 'progresses/:id/finish' => 'progresses#finish', as: 'progresses_finish' #商品終了
+    get 'worker_index/:id' => 'progresses#worker_index', as: 'worker_index' #従業員タスク履歴
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
