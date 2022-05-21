@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :production_processes, only: [:index, :create, :edit, :update]
     resources :products, only: [:index, :new, :show, :create, :show, :edit, :update]
     resources :workers, only: [:index, :show, :edit, :update]
-    resources :progresses, only: [:index, :show]
+    resources :progresses, only: [:index, :show, :edit, :update]
   end
 
   #従業員用

@@ -9,7 +9,7 @@
           <% if admin_signed_in? %>
             <li class="nav-item">
               <%= link_to admin_progresses_path, class: "nav-link text-light btn btn-outline-success mr-1 mb-1" do %>
-                <i class="fas fa-list"></i> 進捗状況
+                <i class="fas fa-list"></i> 実績一覧
               <% end %>
             </li>
             <li class="nav-item">
@@ -40,8 +40,8 @@
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to progresses_path, class: "nav-link text-light text-nowrap btn btn-outline-success mr-1 mb-1" do %>
-                <i class="fas fa-list"></i> 進捗状況
+              <%= link_to worker_index_path(current_worker.id), class: "nav-link text-light text-nowrap btn btn-outline-success mr-1 mb-1" do %>
+                <i class="fas fa-list"></i> 実績一覧
               <% end %>
             </li>
             <li class="nav-item">
