@@ -10,15 +10,11 @@
     </tr>
     <tr>
       <td>平均部数(/h)</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>最大部数(/day)</td>
-      <td></td>
+      <td><%= average.to_i %>　部/(h)</td>
     </tr>
     <tr>
       <td>月間件数</td>
-      <td></td>
+      <td><%#= this_month_progress %>件</td>
     </tr>
   </tbody>
 </table>
@@ -31,11 +27,8 @@
         <i class="fas fa-user-cog"></i>
       <%end%>
     <%end%>
-    <td>
-      <%= link_to '実績', worker_index_path(worker), class: 'btn btn-success my-3' %>
-      <%# if current_user != user && current_user.following?(user) && user.following?(current_user) %>
-        <%#= link_to 'chatを始める', chat_path(user.id), class: "ml-3" %>
-      <%# end %>
-    </td>
+    
+    <%= link_to '実績', worker_index_path(worker), class: 'btn btn-success my-3' %>
+  
 
   </div>

@@ -14,9 +14,7 @@ class Worker::ProgressesController < ApplicationController
   end
 
   def edit
-    #@product = Product.find(params[:id])
     @progress = Progress.find(params[:id])
-    #@progress.id = Progress.where(end_time: nil)
   end
 
   def update
@@ -26,14 +24,14 @@ class Worker::ProgressesController < ApplicationController
   def start
     @progress = Progress.find(params[:id])
     @progress.begin_time = DateTime.now
-    @progress.save!
+    @progress.save
     redirect_to edit_progress_path(@progress)
   end
 
   def finish
     @progress = Progress.find(params[:id])
     @progress.end_time = DateTime.now
-    @progress.save!
+    @progress.save
     redirect_to progress_path(@progress.id)
   end
 
@@ -47,8 +45,7 @@ class Worker::ProgressesController < ApplicationController
 
   def worker_index
     @worker = Worker.find(params[:id])
-    @progresses = @worker.progresses
-    #@progresses = Progress.where(@worker == [:worker_id])
+    @progresses = @worker.progresses.order(end_time: "DESC")
   end
 
   private

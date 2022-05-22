@@ -29,19 +29,19 @@
           <td><%= progress.worker.last_name %><%= progress.worker.first_name %></td>
           <td><%= progress.product.name %></td>
           <td><%= progress.product.production_process.name %></td>
-          <td><%= progress.product_count %></td>
+          <td><%= progress.product_count %>　部</td>
           <td>
             <% if progress.end_time == nil %>
               進行中
             <% else %>
-              <%= progress.time_diff.round(1) %>
+              <%= progress.time_diff.round(1) %>　h
             <% end %>
           </td>
           <td>
             <% if progress.end_time == nil %>
               進行中
             <% else %>
-              <%= progress.product_count_average.to_i %>　部/h
+              <%= progress.count_per_hour.to_i %>　部/h
             <% end %>
           </td>
         </tr>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :products, only: [:index, :new, :show, :create, :show, :edit, :update]
     resources :workers, only: [:index, :show, :edit, :update]
     resources :progresses, only: [:index, :show, :edit, :update]
+    get 'worker_index/:id' => 'progresses#worker_index', as: 'worker_index' #従業員タスク履歴
   end
 
   #従業員用

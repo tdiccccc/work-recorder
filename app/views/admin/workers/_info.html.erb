@@ -10,7 +10,7 @@
     </tr>
     <tr>
       <td>平均部数(/h)</td>
-      <td></td>
+      <td><%#= progeress.count_average(worker) %></td>
     </tr>
     <tr>
       <td>最大部数(/day)</td>
@@ -22,25 +22,19 @@
     </tr>
     <tr>
       <td>ステータス</td>
-      <td>
         <% if worker.is_deleted == false %>
           <td class="text-success">有効</td>
         <% elsif %>
           <td class="text-danger">退会</td>
         <% end %>
-      </td>
     </tr>
   </tbody>
 </table>
 
 <div class='row'>
-      <%= link_to  edit_admin_worker_path(worker), class: "btn btn-outline-secondary btn-block" do %>
-        <i class="fas fa-user-cog"></i>
-      <%end%>
-    <td>
-      <%# if current_user != user && current_user.following?(user) && user.following?(current_user) %>
-        <%#= link_to 'chatを始める', chat_path(user.id), class: "ml-3" %>
-      <%# end %>
-    </td>
+  <%= link_to  edit_admin_worker_path(worker), class: "btn btn-outline-secondary btn-block" do %>
+    <i class="fas fa-user-cog"></i>
+  <%end%>
 
-  </div>
+  <%= link_to '実績', admin_worker_index_path(worker), class: 'btn btn-success my-3' %>
+</div>

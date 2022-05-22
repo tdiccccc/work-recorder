@@ -8,8 +8,21 @@ class Progress < ApplicationRecord
     (end_time - begin_time) / 60 / 60
   end
 
-  def product_count_average
+  #一時間当たりの生産量の計算
+  def count_per_hour
     product_count / time_diff
+  end
+
+  #一時間当たり生産量の平均
+  def average_count(worker_id)
+   #Progress.average(:count_per_hour).to_i
+     product_counts = 0
+     amount = 0
+     Worker.find(worker_id).progresses.find_each do |progress|
+       product_counts += progress.product_count
+       amount += progress.time_diff
+     end
+     product_counts / amount
   end
 
   scope :created_today, -> { where(end_time: Time.zone.now.all_day) } # 今日
@@ -22,4 +35,6 @@ class Progress < ApplicationRecord
 
   scope :created_this_week, -> { where(end_time: 6.day.ago.beginning_of_day..Time.zone.now.end_of_day) } #今週
   scope :created_last_week, -> { where(end_time: 2.week.ago.beginning_of_day..1.week.ago.end_of_day) } # 前週
+
+  scope :created_this_month, -> { where(end_time: Time.zone.now.all_month) }#今月
 end

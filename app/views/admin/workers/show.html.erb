@@ -1,12 +1,15 @@
 <div class='container px-5 px-sm-0'>
-    <div class='row'>
+  <div class='row'>
     <div class='col-md-3'>
-      <h2>従業員詳細</h2>
-      <%= render 'info', worker: @worker %>
+      <h3 class="my-5 bg-light">従業員詳細</h3>
+      <%= render 'info', worker: @worker, average: @average, this_month_progress: @this_month_progress %>
     </div>
 
     <div class='col-md-8 offset-md-1'>
-
+      <%= render 'worker/progress-count/weak-chart', progresses: @progresses %>
+      <h3 class="my-5 bg-light">件数の前日比・前週比</h3>
+      <%= render 'worker/progress-count/day-count', today_progress: @today_progress, yesterday_progress: @yesterday_progress %>
+      <%= render 'worker/progress-count/weak-count', this_week_progress: @this_week_progress, last_week_progress: @last_week_progress %>
     </div>
   </div>
 </div>

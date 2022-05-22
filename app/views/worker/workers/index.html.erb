@@ -15,18 +15,20 @@
           </tr>
         </thead>
         <% @workers.each do |worker| %>
-        <tbody>
-          <tr>
-            <td><%= worker.id %></td>
-            <td>
-              <%= link_to worker_path(worker.id) do%>
-                <%= worker.last_name %> <%= worker.first_name %>
-              <%end%>
-            </td>
-            <td>
-            </td>
-          </tr>
-        </tbody>
+          <% if worker.is_deleted != true %>
+          <tbody>
+            <tr>
+              <td><%= worker.id %></td>
+              <td>
+                <%= link_to worker_path(worker.id) do%>
+                  <%= worker.last_name %> <%= worker.first_name %>
+                <%end%>
+              </td>
+              <td>
+              </td>
+            </tr>
+          </tbody>
+          <% end %>
         <% end %>
       </table>
     </div>
