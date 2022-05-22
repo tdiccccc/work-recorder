@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  root to: 'homes#top'
   #管理者用
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
@@ -17,8 +19,6 @@ Rails.application.routes.draw do
     sessions: 'worker/sessions'
   }
   scope module: :worker do
-    root to: 'homes#top'
-    get 'about' => 'homes#about', as: 'about'
     resources :workers, only: [:index, :show, :edit, :update]
     resources :products, only: [:index, :show]
     resources :progresses, only: [:index, :show, :create, :edit, :update]

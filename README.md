@@ -39,3 +39,7 @@
 - AWS cloud9
 - Ruby 2.6.3
 - Ruby on Rails(6.1.5)
+
+## 使用素材
+
+- Pixtabay（画像）
