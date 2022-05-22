@@ -19,7 +19,7 @@ class Admin::ProgressesController < ApplicationController
   def update
     @progress = Progress.find(params[:id])
     @progress.update(progress_params)
-    redirect_to admin_progress_path(@progress)
+    redirect_to admin_progress_path(@progress), notice: '実績を更新しました'
   end
 
   private

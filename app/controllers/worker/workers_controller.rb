@@ -28,7 +28,7 @@ class Worker::WorkersController < ApplicationController
   def update
     @worker = Worker.find(params[:id])
     @worker.update(workers_params)
-    redirect_to worker_path(params[:id])
+    redirect_to worker_path(params[:id]), notice: "従業員情報を更新しました。"
   end
 
   private
