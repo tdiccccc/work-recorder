@@ -30,12 +30,20 @@
           <td><%= @progress.product_count %>部</td>
         </tr>
         <tr>
-          <td>ステータス</td>
+          <td>開始時間</td>
+          <td>
+            <% if @progress.begin_time != nil %>
+              <%= @progress.begin_time.to_s(:datetime_jp) %>
+            <%end%>
+          </td>
+        </tr>
+        <tr>
+          <td>完了時間</td>
           <td>
             <% if @progress.end_time == nil %>
               進行中
             <% else %>
-              完了（<%= @progress.end_time.to_s(:datetime_jp) %>）
+              <%= @progress.end_time.to_s(:datetime_jp) %>
             <% end %>
           </td>
         </tr>
