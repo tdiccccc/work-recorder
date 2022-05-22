@@ -2,7 +2,7 @@ class Admin::WorkersController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @workers = Worker.all
+    @workers = Worker.page(params[:page])
   end
 
   def show
@@ -10,9 +10,9 @@ class Admin::WorkersController < ApplicationController
     @progress = Progress.find(params[:id])
     #一時間当たり生産量の平均
     @average = @progress.average_count(@worker.id)
-    
+
     @progresses = @worker.progresses
-    
+
     @today_progress = @progresses.created_today
     @yesterday_progress = @progresses.created_yesterday
     @this_week_progress = @progresses.created_this_week

@@ -25,18 +25,18 @@ class Worker::ProgressesController < ApplicationController
     @progress = Progress.find(params[:id])
     @progress.begin_time = DateTime.now
     @progress.save
-    redirect_to edit_progress_path(@progress)
+    redirect_to edit_progress_path(@progress), notice: 'タイマーが開始されました'
   end
 
   def finish
     @progress = Progress.find(params[:id])
     @progress.end_time = DateTime.now
     @progress.save
-    redirect_to progress_path(@progress.id)
+    redirect_to progress_path(@progress.id), notice: '実績が登録されました'
   end
 
   def index
-    @progresses = Progress.all
+    @progresses = Progress.page(params[:page])
   end
 
   def show
@@ -45,7 +45,7 @@ class Worker::ProgressesController < ApplicationController
 
   def worker_index
     @worker = Worker.find(params[:id])
-    @progresses = @worker.progresses.order(end_time: "DESC")
+    @progresses = @worker.progresses.page(params[:page]).order(end_time: "DESC")
   end
 
   private

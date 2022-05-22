@@ -1,11 +1,11 @@
 class Admin::ProgressesController < ApplicationController
   def index
-    @progresses = Progress.all.order(end_time: "DESC")
+    @progresses = Progress.page(params[:page]).order(end_time: "DESC")
   end
 
   def worker_index
     @worker = Worker.find(params[:id])
-    @progresses = @worker.progresses.order(end_time: "DESC")
+    @progresses = @worker.progresses.page(params[:page]).order(end_time: "DESC")
   end
 
   def show
