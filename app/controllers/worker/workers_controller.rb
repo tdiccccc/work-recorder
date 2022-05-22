@@ -18,7 +18,7 @@ class Worker::WorkersController < ApplicationController
     @yesterday_progress = @progresses.created_yesterday
     @this_week_progress = @progresses.created_this_week
     @last_week_progress = @progresses.created_last_week
-    @this_month_progress = @progresses.created_this_month
+    #@this_month_progress = @progresses.created_this_month
   end
 
   def edit

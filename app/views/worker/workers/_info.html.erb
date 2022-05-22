@@ -12,17 +12,11 @@
       <td>平均部数(/h)</td>
       <td><%= average.to_i %>　部/(h)</td>
     </tr>
-    <tr>
-      <td>月間件数</td>
-      <td><%#= this_month_progress %>件</td>
-    </tr>
   </tbody>
 </table>
 
 <div class='row'>
-    <% if current_worker != worker %>
-      <td><%#= render "relationships/btn", user: user %></td>
-    <% else %>
+    <% if current_worker == worker %>
       <%= link_to  edit_worker_path(worker), class: "btn btn-outline-secondary btn-block " do %>
         <i class="fas fa-user-cog"></i>
       <%end%>
