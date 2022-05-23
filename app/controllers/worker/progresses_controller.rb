@@ -3,13 +3,12 @@ class Worker::ProgressesController < ApplicationController
   before_action :ensure_correct_worker, only: [:edit, :update]
 
   def create
-    #@product = Product.find(params[:id])
     @progress = Progress.new(progress_params)
     @progress.worker_id = current_worker.id
     if @progress.save
       redirect_to edit_progress_path(@progress), notice: 'タイマーを開始してください'
     else
-      redirect_to product_path(@product), notice: '部数を入力してください'
+      redirect_to products_path, alert: '部数を入力してください'
     end
   end
 
@@ -20,7 +19,7 @@ class Worker::ProgressesController < ApplicationController
   def update
     @progress = Progress.find(params[:id])
     @progress.update(progress_params)
-    redirect_to admin_progress_path(@progress), notice: '実績を更新しました'
+    redirect_to progress_path(@progress), notice: '実績を更新しました'
   end
   def start
     @progress = Progress.find(params[:id])

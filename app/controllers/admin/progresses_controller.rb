@@ -1,4 +1,6 @@
 class Admin::ProgressesController < ApplicationController
+  before_action :authenticate_admin!
+
   def index
     @progresses = Progress.page(params[:page]).order(end_time: "DESC")
   end

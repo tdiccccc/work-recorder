@@ -11,7 +11,7 @@ class Admin::ProductsController < ApplicationController
     if @product.save
       redirect_to admin_products_path, notice: "商品 #{@product.name} を登録しました。"
     else
-      render :new
+      redirect_to new_admin_product_path, alert: "未入力の項目があります"
     end
   end
 
@@ -30,8 +30,11 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @product.update(products_params)
-    redirect_to admin_product_path
+    if @product.update(products_params)
+      redirect_to admin_product_path(@product), notice: '商品情報を更新しました'
+    else
+      redirect_to edit_admin_product_path(@product), alert: '更新に失敗しました'
+    end
   end
 
   private

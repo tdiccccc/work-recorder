@@ -5,7 +5,9 @@ class Progress < ApplicationRecord
   validates :product_count, presence: true
 
   def time_diff
-    (end_time - begin_time) / 60 / 60
+    if end_time != nil
+      (end_time - begin_time) / 60 / 60
+    end
   end
 
   #一時間当たりの生産量の計算
@@ -15,12 +17,13 @@ class Progress < ApplicationRecord
 
   #一時間当たり生産量の平均
   def average_count(worker_id)
-   #Progress.average(:count_per_hour).to_i
      product_counts = 0
      amount = 0
      Worker.find(worker_id).progresses.find_each do |progress|
+      if progress.end_time != nil
        product_counts += progress.product_count
        amount += progress.time_diff
+      end
      end
      product_counts / amount
   end

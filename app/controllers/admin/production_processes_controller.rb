@@ -12,6 +12,7 @@ class Admin::ProductionProcessesController < ApplicationController
     if @process.save
       flash.now[:notice] = "工程を登録しました"
     else
+      flash.now[:alert] = "工程名が未入力です"
       @processes = ProductionProcess.page(params[:page])
     end
   end
@@ -23,7 +24,7 @@ class Admin::ProductionProcessesController < ApplicationController
   def update
     @process = ProductionProcess.find(params[:id])
     @process.update(process_params)
-    redirect_to admin_production_processes_path
+    redirect_to admin_production_processes_path, notice: '工程名を更新'
   end
 
   private
