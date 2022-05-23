@@ -5,5 +5,5 @@ class Product < ApplicationRecord
 
   validates :production_process_id, presence: true
   validates :name, presence: true
-  validates :introduction, presence: true
+  validates :introduction, length: { minimum: 1, maximum: 200 }
 end

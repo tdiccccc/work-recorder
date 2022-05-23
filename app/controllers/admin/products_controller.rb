@@ -11,7 +11,7 @@ class Admin::ProductsController < ApplicationController
     if @product.save
       redirect_to admin_products_path, notice: "商品 #{@product.name} を登録しました。"
     else
-      redirect_to new_admin_product_path, alert: "未入力の項目があります"
+      redirect_to new_admin_product_path, alert: "未入力の項目があるか、文字数が多すぎます"
     end
   end
 

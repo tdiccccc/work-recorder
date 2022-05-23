@@ -6,6 +6,9 @@ class Worker < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :last_name, length: { minimum: 1, maximum: 20 }
+  validates :first_name, length: { minimum: 1, maximum: 20 }
+
   def active_for_authentication?
     super && (is_deleted == false)
   end
