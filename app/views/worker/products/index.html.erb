@@ -8,7 +8,7 @@
 
       <table class="table table-hover table-inverse">
         <thead>
-          <tr>
+          <tr class="bg-light">
             <th>商品ID</th>
             <th>商品名</th>
             <th>工程</th>
@@ -24,15 +24,11 @@
               <%= link_to product.name, product_path(product.id) %>
             </td>
             <td><%= product.production_process.name %></td>
-            <td><%#=  %></td>
-            <td>
-              <%#= link_to 'この商品を開始する', progress_path(product), class: "btn btn-success" %>
-            </td>
           </tr>
         </tbody>
         <% end %>
       </table>
     </div>
+    <%= paginate @products %>
   </div>
-  <%= paginate @products %>
 </div>
