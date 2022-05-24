@@ -18,9 +18,13 @@ class Worker::ProgressesController < ApplicationController
 
   def update
     @progress = Progress.find(params[:id])
-    @progress.update(progress_params)
-    redirect_to progress_path(@progress), notice: '実績を更新しました'
+    if @progress.update(progress_params)
+      redirect_to progress_path(@progress), notice: '実績を更新しました'
+    else
+      redirect_to edit_progress_path(@progress), alert: '実績の更新に失敗しました'
+    end
   end
+
   def start
     @progress = Progress.find(params[:id])
     @progress.begin_time = DateTime.now
@@ -54,9 +58,6 @@ class Worker::ProgressesController < ApplicationController
     params.require(:progress).permit(:product_id, :worker_id, :product_count, :begin_time, :end_time)
   end
 
-  def product_params
-
-  end
   #自分の実績のみ編集可能
   def ensure_correct_worker
     @progress = Progress.find(params[:id])

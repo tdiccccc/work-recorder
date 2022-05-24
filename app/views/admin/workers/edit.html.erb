@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <h3 class="m-3 bg-light">
-      <%= @worker.last_name %><%= @worker.first_name %>さんの会員情報編集画面
+      <%= @worker.last_name %><%= @worker.first_name %>さんの情報編集画面
     </h3>
   </div>
   <%= form_with model: [:admin,@worker] do |f| %>
@@ -16,12 +16,12 @@
         <%= f.text_field :first_name, class: "form-control mb-2" %>
       </div>
     </div>
-    
+
     <div class="field row">
       <div class="col-2"><%= f.label :email, "メールアドレス" %></div>
       <div class="col-6"><%= f.email_field :email, autocomplete: "email", class: "form-control mb-2" %></div>
     </div>
-    
+
     <div class="field row">
       <div class="col-2"><%= f.label :is_deleted, "会員ステータス" %></div>
       <div class="col-6">

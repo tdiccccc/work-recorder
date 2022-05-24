@@ -9,7 +9,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(products_params)
     if @product.save
-      redirect_to admin_products_path, notice: "商品 #{@product.name} を登録しました。"
+      redirect_to admin_product_path(@product), notice: "商品 #{@product.name} を登録しました。"
     else
       redirect_to new_admin_product_path, alert: "未入力の項目があるか、文字数が多すぎます"
     end

@@ -20,9 +20,9 @@
         <tr>
           <td>
             <% if progress.end_time == nil %>
-              <%= link_to '進行中', progress_path(progress.id) %>
+              <%= link_to '進行中', admin_progress_path(progress.id) %>
             <% else %>
-              <%= link_to progress.end_time.to_s(:datetime_jp),progress_path(progress.id) %>
+              <%= link_to progress.end_time.to_s(:datetime_jp),admin_progress_path(progress.id) %>
             <% end %>
           </td>
           <td><%= progress.product.name %></td>

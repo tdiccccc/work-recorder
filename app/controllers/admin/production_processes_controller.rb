@@ -23,8 +23,11 @@ class Admin::ProductionProcessesController < ApplicationController
 
   def update
     @process = ProductionProcess.find(params[:id])
-    @process.update(process_params)
-    redirect_to admin_production_processes_path, notice: '工程名を更新'
+    if @process.update(process_params)
+      redirect_to admin_production_processes_path, notice: '工程名を更新しました'
+    else
+      redirect_to edit_admin_production_process_path(@process), alert: '工程名の更新に失敗しました'
+    end
   end
 
   private

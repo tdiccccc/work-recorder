@@ -17,15 +17,17 @@ class Progress < ApplicationRecord
 
   #一時間当たり生産量の平均
   def average_count(worker_id)
-     product_counts = 0
-     amount = 0
-     Worker.find(worker_id).progresses.find_each do |progress|
+    product_counts = 0
+    amount = 0
+    Worker.find(worker_id).progresses.find_each do |progress|
       if progress.end_time != nil
-       product_counts += progress.product_count
-       amount += progress.time_diff
+        product_counts += progress.product_count
+        amount += progress.time_diff
       end
-     end
-     product_counts / amount
+    end
+    product_counts / amount
+  rescue ZeroDivisionError
+      0
   end
 
   scope :created_today, -> { where(end_time: Time.zone.now.all_day) } # 今日
