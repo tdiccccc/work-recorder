@@ -20,8 +20,11 @@ class Admin::ProgressesController < ApplicationController
 
   def update
     @progress = Progress.find(params[:id])
-    @progress.update(progress_params)
-    redirect_to admin_progress_path(@progress), notice: '実績を更新しました'
+    if @progress.update(progress_params)
+      redirect_to admin_progress_path(@progress), notice: '実績を更新しました'
+    else
+      redirect_to edit_admin_progress_path(@progress), alert: '実績の更新に失敗しました'
+    end
   end
 
   private
