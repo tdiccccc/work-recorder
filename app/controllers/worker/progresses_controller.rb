@@ -19,7 +19,11 @@ class Worker::ProgressesController < ApplicationController
   def update
     @progress = Progress.find(params[:id])
     if @progress.update(progress_params)
-      redirect_to progress_path(@progress), notice: '実績を更新しました'
+      if @progress.end_time != nil
+        redirect_to progress_path(@progress), notice: '実績を更新しました'
+      else
+        redirect_to edit_progress_path(@progress),notice: '部数の変更をしました'
+      end
     else
       redirect_to edit_progress_path(@progress), alert: '実績の更新に失敗しました'
     end

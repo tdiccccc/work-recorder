@@ -40,6 +40,4 @@ class Progress < ApplicationRecord
 
   scope :created_this_week, -> { where(end_time: 6.day.ago.beginning_of_day..Time.zone.now.end_of_day) } #今週
   scope :created_last_week, -> { where(end_time: 2.week.ago.beginning_of_day..1.week.ago.end_of_day) } # 前週
-
-  scope :created_this_month, -> { where(end_time: Time.zone.now.all_month) }#今月
 end

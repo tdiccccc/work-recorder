@@ -3,7 +3,7 @@ class Admin::ProductionProcessesController < ApplicationController
 
   def index
     @process = ProductionProcess.new
-    @processes = ProductionProcess.page(params[:page])
+    @processes = ProductionProcess.all
   end
 
   def create

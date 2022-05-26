@@ -7,17 +7,14 @@ class Admin::WorkersController < ApplicationController
 
   def show
     @worker = Worker.find(params[:id])
-    @progress = Progress.find(params[:id])
-    #一時間当たり生産量の平均
-    @average = @progress.average_count(@worker.id)
-
     @progresses = @worker.progresses
+    #一時間当たり生産量の平均
+    @average = Progress.average_count(@worker.id)
 
     @today_progress = @progresses.created_today
     @yesterday_progress = @progresses.created_yesterday
     @this_week_progress = @progresses.created_this_week
     @last_week_progress = @progresses.created_last_week
-    #@this_month_progress = @progresses.created_this_month
   end
 
   def edit
