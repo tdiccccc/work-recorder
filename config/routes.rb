@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root to: 'homes#top'
   #管理者用
   devise_for :admin, skip: [:registrations, :passwords], controllers: {

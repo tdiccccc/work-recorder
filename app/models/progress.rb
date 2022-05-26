@@ -16,16 +16,16 @@ class Progress < ApplicationRecord
   end
 
   #一時間当たり生産量の平均
-  def average_count(worker_id)
+  def self.average_count(worker_id)
     product_counts = 0
-    amount = 0
+    total_time = 0
     Worker.find(worker_id).progresses.find_each do |progress|
       if progress.end_time != nil
         product_counts += progress.product_count
-        amount += progress.time_diff
+        total_time += progress.time_diff
       end
     end
-    product_counts / amount
+    product_counts / total_time
   rescue ZeroDivisionError
       0
   end
