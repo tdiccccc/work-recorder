@@ -4,18 +4,18 @@
  </div>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field row">
-    <div class="col-2"><%= f.label :email %></div>
-    <div class="col-6"><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %></div>
+    <div class="col-2 mx-auto"><%= f.label :email %></div>
+    <div class="col-6 mx-auto"><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %></div>
   </div>
 
   <div class="field row mt-2">
-    <div class="col-2"><%= f.label :password %></div>
-    <div class="col-6"><%= f.password_field :password, autocomplete: "current-password", class: "form-control" %></div>
+    <div class="col-2 mx-auto"><%= f.label :password %></div>
+    <div class="col-6 mx-auto"><%= f.password_field :password, autocomplete: "current-password", class: "form-control" %></div>
   </div>
 
   <div class="actions row">
-    <div class="col-2"></div>
-    <div class="col-6 p-3"><%= f.submit "ログイン", class: "btn btn-outline-primary" %></div>
+    <div class="col-2 mx-auto"></div>
+    <div class="col-6 p-3 mx-auto"><%= f.submit "ログイン", class: "btn btn-outline-primary" %></div>
   </div>
 <% end %>
 <%= render "admin/shared/links" %>

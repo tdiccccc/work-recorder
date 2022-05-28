@@ -53,28 +53,6 @@ main {
 }
 
 
-@media screen and (max-width: 425px) {
-  header{
-    width: 100%;
-  }
-
-  main {
-    width: 100%;
-    display: block;
-  }
-
-  .box {
-    width: 90%;
-    margin-top: 50px;
-    margin: 20px auto;
-  }
-
-  .box:last-child {
-    margin-bottom: 50px;
-    margin: 20px auto;
-  }
-}
-
 @media screen and (max-width: 768px) {
   header{
     width: 100%;
