@@ -39,26 +39,6 @@ main {
   margin-right: 0;
 }
 
-.box1 {
-  height: 150px;
-  /*background-image: url(assets/images/mark-g32903e08a_640.jpg);*/
-  background-position: bottom;
-  background-size: cover;
-}
-
-.box2 {
-  height: 150px;
-  /*background-image: url(img.10/flow02.png);*/
-  background-position: bottom;
-  background-size: cover;
-}
-
-.box3 {
-  height: 150px;
-  /*background-image: url(img.10/flow03.png);*/
-  background-position: bottom;
-  background-size: cover;
-}
 
 .box-num {
   position: absolute;
@@ -72,9 +52,27 @@ main {
   margin: 15px 0 5px 0;
 }
 
-footer {
-  height: 50px;
-  background-color: #AAAAAA;
+
+@media screen and (max-width: 425px) {
+  header{
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+    display: block;
+  }
+
+  .box {
+    width: 90%;
+    margin-top: 50px;
+    margin: 20px auto;
+  }
+
+  .box:last-child {
+    margin-bottom: 50px;
+    margin: 20px auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -85,6 +83,18 @@ footer {
   main {
     width: 100%;
     display: block;
+  }
+
+  .box1 {
+    height: 300px;
+  }
+
+  .box2 {
+    height: 300px;
+  }
+
+  .box3 {
+    height: 300px;
   }
 
   .box {
