@@ -8,12 +8,12 @@ class Admin::ProductionProcessesController < ApplicationController
 
   def create
     @process = ProductionProcess.new(process_params)
-    @processes = ProductionProcess.page(params[:page])
+    @processes = ProductionProcess.all
     if @process.save
       flash.now[:notice] = "工程を登録しました"
     else
       flash.now[:alert] = "工程名が未入力か、文字数が多すぎます"
-      @processes = ProductionProcess.page(params[:page])
+      @processes = ProductionProcess.all
     end
   end
 
