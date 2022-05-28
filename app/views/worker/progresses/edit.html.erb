@@ -6,10 +6,12 @@
       <%= form_with model: @progress do |f| %>
         <div class="row my-4 form-group">
           <%= f.label "部数", class: "col-sm-2 col-form-label" %>
-          <div class="col-sm-6">
-          <%= f.number_field :product_count, class: "form-control" %>
+          <div class="col-sm-6 col ">
+            <%= f.text_field :product_count, class: "form-control" %>
           </div>
-          <%= f.submit "部数を変更する", class: "btn btn-success" %>
+          <div class="col-sm-2 col">
+            <%= f.submit "部数を変更する", class: "btn btn-success" %>
+          </div>
         </div>
       <%end%>
     </div>

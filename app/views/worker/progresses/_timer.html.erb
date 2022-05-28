@@ -6,14 +6,14 @@
   </div>
 
   <div class="row justify-content-center mt-5">
-    <div class="col-md-2">
+    <div class="col-md-3 col-3">
       <%= form_with model: @progress, url: progresses_start_path, method: :patch do |f| %>
         <%= f.hidden_field :progress_id %>
         <%= f.submit '開始', class: "btn btn-success" %>
       <%end%>
     </div>
 
-    <div class="col-md-2">
+    <div class="col-md-1 col-3">
       <%= form_with model: @progress, url: progresses_finish_path, method: :patch do |f| %>
         <%= f.hidden_field :progress_id %>
         <%= f.submit '完了', class: "btn btn-secondary", disabled: true %>
@@ -29,13 +29,13 @@
   </div>
 
   <div class="row justify-content-center mt-5">
-    <div class="col-md-2">
+    <div class="col-md-3 col-3">
       <%= form_with model: @progress, url: progresses_start_path, method: :patch do |f| %>
         <%= f.hidden_field :progress_id %>
         <%= f.submit '開始', class: "btn btn-secondary", disabled: true %>
       <%end%>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-1 col-3">
       <%= form_with model: @progress, url: progresses_finish_path, method: :patch do |f| %>
         <%= f.hidden_field :progress_id %>
         <%= f.submit '完了', class: "btn btn-success" %>
