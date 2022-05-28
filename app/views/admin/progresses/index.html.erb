@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-    <h3 class="bg-light my-5">従業員実績履歴</strong></h3>
+    <h3 class="bg-light ml-3 my-5">従業員実績履歴</strong></h3>
   </div>
 
   <div class="row  justify-content-center">
-    <table class="table table-hover table-inverse">
+    <table class="table table-hover table-inverse" id="progress-table">
       <thead>
         <tr class="bg-light">
-          <th>完了日時</th>
+          <th class="fixed head">完了日時</th>
           <th>担当</th>
           <th>商品名</th>
           <th>工程</th>
@@ -19,7 +19,7 @@
       <tbody>
        <% @progresses.each do |progress| %>
         <tr>
-          <td>
+          <td class="fixed body">
             <% if progress.end_time == nil %>
               <%= link_to '進行中', admin_progress_path(progress.id) %>
             <% else %>

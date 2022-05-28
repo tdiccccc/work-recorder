@@ -1,15 +1,15 @@
-<table class ="table">
+<table class ="table" id="worker-table">
   <tbody>
     <tr>
-      <td>従業員名</td>
+      <th>従業員名</th>
       <td><%= worker.last_name %>　<%= worker.first_name %></td>
     </tr>
     <tr>
-      <td>ID</td>
+      <th>ID</th>
       <td><%= worker.id %></td>
     </tr>
     <tr>
-      <td>平均部数(/h)</td>
+      <th>平均部数(/h)</th>
       <td><%= average.to_i %>　部/(h)</td>
     </tr>
   </tbody>

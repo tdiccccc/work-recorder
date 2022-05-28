@@ -1,3 +1,12 @@
 // Place all the styles related to the worker/workers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  #worker-table th,
+  #worker-table td {
+    display: block;
+    width: 100%;
+    border-bottom: none;
+  }
+}
