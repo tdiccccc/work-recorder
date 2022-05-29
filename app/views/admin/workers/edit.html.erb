@@ -6,25 +6,25 @@
   </div>
   <%= form_with model: [:admin,@worker] do |f| %>
     <div class="field row">
-      <div class="col-2"><%= f.label :worker_id, "会員ID" %></div>
-      <div class="col-6"><%= @worker.id %></div>
+      <div class="col-xl-2 mx-auto"><%= f.label :worker_id, "会員ID" %></div>
+      <div class="col-xl-6 mx-auto"><%= @worker.id %></div>
     </div>
     <div class="field row">
-      <div class="col-2"><%= f.label :name, "氏名" %></div>
-      <div class="col-6 form-inline">
+      <div class="col-xl-2 mx-auto"><%= f.label :name, "氏名" %></div>
+      <div class="col-xl-6 mx-auto form-inline">
         <%= f.text_field :last_name, class: "form-control mr-2 mb-2" %>
         <%= f.text_field :first_name, class: "form-control mb-2" %>
       </div>
     </div>
 
     <div class="field row">
-      <div class="col-2"><%= f.label :email, "メールアドレス" %></div>
-      <div class="col-6"><%= f.email_field :email, autocomplete: "email", class: "form-control mb-2" %></div>
+      <div class="col-xl-2 mx-auto"><%= f.label :email, "メールアドレス" %></div>
+      <div class="col-xl-6 mx-auto"><%= f.email_field :email, autocomplete: "email", class: "form-control mb-2" %></div>
     </div>
 
     <div class="field row">
-      <div class="col-2"><%= f.label :is_deleted, "会員ステータス" %></div>
-      <div class="col-6">
+      <div class="col-xl-2 mx-auto"><%= f.label :is_deleted, "会員ステータス" %></div>
+      <div class="col-xl-6 mx-auto">
         <%= f.radio_button :is_deleted, true %>
         <%= f.label :is_deleted, "退会", value: true %>
         <%= f.radio_button :is_deleted, false %>
@@ -32,8 +32,8 @@
        </div>
     </div>
     <div class="field row">
-      <div class="col-2"></div>
-      <div class="col-6 mb-5 mt-3"><%= f.submit "変更を保存", class: "btn btn-success" %></div>
+      <div class="col-xl-2 mx-auto"></div>
+      <div class="col-xl-6 mx-auto mb-5 mt-3"><%= f.submit "変更を保存", class: "btn btn-success" %></div>
     </div>
   <% end %>
 </div>

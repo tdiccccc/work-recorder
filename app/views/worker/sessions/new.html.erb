@@ -2,7 +2,7 @@
   <div class="row">
     <h3 class="m-3 bg-light">ログイン</h3>
   </div>
-  <div class="row">
+  <div class="row ml-3">
     <p class="bg-light">従業員の方はこちらからログイン</p>
   </div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -22,8 +22,10 @@
     </div>
   <% end %>
 
-  <div class="row my-2">
+  <div class="row m-3">
     <p class="bg-light">会員登録がお済みでない方</p>
   </div>
-  <p class="mb-3"><%= render "worker/shared/links" %></p>
+  <div class="row ml-3 my-2">
+    <p class="mb-3"><%= render "worker/shared/links" %></p>
+  </div>
 </div>
