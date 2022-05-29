@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :products, only: [:index, :new, :show, :create, :show, :edit, :update]
     resources :workers, only: [:index, :show, :edit, :update]
     resources :progresses, only: [:index, :show, :edit, :update]
-    get 'worker_index/:id' => 'progresses#worker_index', as: 'worker_index' #従業員タスク履歴
+    get 'worker_index/:id' => 'progresses#worker_index', as: 'worker_index' #従業員実績履歴
   end
 
   #従業員用
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
     patch 'progresses/:id/start' => 'progresses#start', as: 'progresses_start' #商品開始
     patch 'progresses/:id/finish' => 'progresses#finish', as: 'progresses_finish' #商品終了
-    get 'worker_index/:id' => 'progresses#worker_index', as: 'worker_index' #従業員タスク履歴
+    get 'worker_index/:id' => 'progresses#worker_index', as: 'worker_index' #従業員実績履歴
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

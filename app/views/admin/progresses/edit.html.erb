@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <h3 class="m-3 bg-light">
-
+      実績編集画面
     </h3>
   </div>
   <%= form_with model: [:admin,@progress] do |f| %>
@@ -21,35 +21,35 @@
       <div class="col-sm-2 col"><%= f.label "商品名" %></div>
       <div class="col-sm-6 col">
         <%= @progress.product.name %>
-       </div>
+      </div>
     </div>
 
     <div class="field row">
       <div class="col-sm-2 col"><%= f.label "工程" %></div>
       <div class="col-sm-6 col">
         <%= @progress.product.production_process.name %>
-       </div>
+      </div>
     </div>
 
     <div class="field row">
       <div class="col-sm-2 col"><%= f.label :product_count, "部数" %></div>
       <div class="col-sm-6 col">
         <%= f.number_field :product_count,class: 'form-control mb-1' %>
-       </div>
+      </div>
     </div>
 
     <div class="field row">
       <div class="col-sm-2 col"><%= f.label :begin_time, "開始時間" %></div>
       <div class="col-sm-6 col">
         <%= f.datetime_select :begin_time, {}, class: 'form-control mb-1' %>
-       </div>
+      </div>
     </div>
 
     <div class="field row">
       <div class="col-sm-2 col"><%= f.label :end_time, "完了時間" %></div>
       <div class="col-sm-6 col">
         <%= f.datetime_select :end_time, {}, class: 'form-control mb-1' %>
-       </div>
+      </div>
     </div>
     <div class="field row">
       <div class="col-sm-2 col"></div>

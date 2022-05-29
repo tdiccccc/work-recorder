@@ -1,25 +1,25 @@
 <div class="table_width">
-    <table class='table table-bordered'>
-      <thead>
-        <tr>
-          <th>今週の実績件数</th>
-          <th>前週の実績件数</th>
-          <th>前週比</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><%= this_week_progress.count %>件</td>
-          <td><%= last_week_progress.count %>件</td>
-          <td>
-            <% if last_week_progress.count == 0 %>
-              前週の実績が0のため計算できません
-            <% else %>
-              <% @the_week_before = @this_week_progress.count / @last_week_progress.count.to_f  %>
-              <%= (@the_week_before * 100).round %>%
-            <% end %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <th>今週の実績件数</th>
+        <th>前週の実績件数</th>
+        <th>前週比</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= this_week_progress.count %>件</td>
+        <td><%= last_week_progress.count %>件</td>
+        <td>
+          <% if last_week_progress.count == 0 %>
+            前週の実績が0のため計算できません
+          <% else %>
+            <% @the_week_before = @this_week_progress.count / @last_week_progress.count.to_f  %>
+            <%= (@the_week_before * 100).round %>%
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

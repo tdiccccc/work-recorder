@@ -5,7 +5,6 @@
 
   <div class="row justify-content-center">
     <div class="col-md-10">
-
       <table class="table table-hover table-inverse">
         <thead>
           <tr>
@@ -23,11 +22,11 @@
                 <%= worker.last_name %> <%= worker.first_name %>
               <%end%>
             </td>
-            <% if worker.is_deleted == false %>
-              <td class="text-success">有効</td>
-            <% elsif %>
-              <td class="text-danger">退会</td>
-            <% end %>
+              <% if worker.is_deleted == false %>
+                <td class="text-success">有効</td>
+              <% elsif %>
+                <td class="text-danger">退会</td>
+              <% end %>
           </tr>
         </tbody>
         <% end %>
