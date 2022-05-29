@@ -6,54 +6,54 @@
   </div>
   <%= form_with model: [:admin,@progress] do |f| %>
     <div class="field row">
-      <div class="col-2"><%= f.label :id, "実績ID" %></div>
-      <div class="col-6"><%= @progress.id %></div>
+      <div class="col-sm-2 col"><%= f.label :id, "実績ID" %></div>
+      <div class="col-sm-6 col"><%= @progress.id %></div>
     </div>
 
     <div class="field row">
-      <div class="col-2"><%= f.label "担当" %></div>
-      <div class="col-6 form-inline">
+      <div class="col-sm-2 col"><%= f.label "担当" %></div>
+      <div class="col-sm-6 col form-inline">
         <%= @progress.worker.last_name %><%= @progress.worker.first_name %>
       </div>
     </div>
 
     <div class="field row">
-      <div class="col-2"><%= f.label "商品名" %></div>
-      <div class="col-6">
+      <div class="col-sm-2 col"><%= f.label "商品名" %></div>
+      <div class="col-sm-6 col">
         <%= @progress.product.name %>
        </div>
     </div>
 
     <div class="field row">
-      <div class="col-2"><%= f.label "工程" %></div>
-      <div class="col-6">
+      <div class="col-sm-2 col"><%= f.label "工程" %></div>
+      <div class="col-sm-6 col">
         <%= @progress.product.production_process.name %>
        </div>
     </div>
 
     <div class="field row">
-      <div class="col-2"><%= f.label :product_count, "部数" %></div>
-      <div class="col-6">
+      <div class="col-sm-2 col"><%= f.label :product_count, "部数" %></div>
+      <div class="col-sm-6 col">
         <%= f.number_field :product_count,class: 'form-control mb-1' %>
        </div>
     </div>
 
     <div class="field row">
-      <div class="col-2"><%= f.label :begin_time, "開始時間" %></div>
-      <div class="col-6">
+      <div class="col-sm-2 col"><%= f.label :begin_time, "開始時間" %></div>
+      <div class="col-sm-6 col">
         <%= f.datetime_select :begin_time, {}, class: 'form-control mb-1' %>
        </div>
     </div>
 
     <div class="field row">
-      <div class="col-2"><%= f.label :end_time, "完了時間" %></div>
-      <div class="col-6">
+      <div class="col-sm-2 col"><%= f.label :end_time, "完了時間" %></div>
+      <div class="col-sm-6 col">
         <%= f.datetime_select :end_time, {}, class: 'form-control mb-1' %>
        </div>
     </div>
     <div class="field row">
-      <div class="col-2"></div>
-      <div class="col-6 mb-5 mt-3"><%= f.submit "変更を保存", class: "btn btn-success" %></div>
+      <div class="col-sm-2 col"></div>
+      <div class="col-sm-6 col mb-5 mt-3"><%= f.submit "変更を保存", class: "btn btn-success" %></div>
     </div>
   <% end %>
 </div>
