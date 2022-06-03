@@ -39,7 +39,7 @@
 - 言語　HTML, CSS, JavaScript, Ruby, SCSS
 - フレームワーク　Ruby on rails,  Bootstrap
 - Jsライブラリ　jQuery
-- インフラ　AWS(EC2, RDS,AMI,EIP)
+- インフラ　AWS(EC2, RDS)
 - その他ツールなど AWS Cloud9,GitHubなど
 - Ruby 2.6.3
 - Ruby on Rails(6.1.6)
