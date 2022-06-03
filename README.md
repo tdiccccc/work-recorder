@@ -32,13 +32,17 @@
 - Ajax
 - kaminari
 - chart.js
-- bootstrap
+- Bootstrap
 
 ## 環境
-
-- AWS cloud9
+- os　Amazon Linux release 2 (Karoo)
+- 言語　HTML, CSS, JavaScript, Ruby, SCSS
+- フレームワーク　Ruby on rails,  Bootstrap
+- Jsライブラリ　jQuery
+- インフラ　AWS(EC2, RDS,AMI,EIP)
+- その他ツールなど AWS Cloud9,GitHubなど
 - Ruby 2.6.3
-- Ruby on Rails(6.1.5)
+- Ruby on Rails(6.1.6)
 
 ## 使用素材
 
