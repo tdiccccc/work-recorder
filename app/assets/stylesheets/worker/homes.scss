@@ -42,3 +42,9 @@
   background-size: cover;
 }
 
+@media screen and (max-width: 352px) {
+  .top-heading:before {
+    content: "";
+    height: 105px;
+  }
+}
