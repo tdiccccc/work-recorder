@@ -46,4 +46,4 @@
 
 ## 使用素材
 
-- Pixtabay（画像）
+- Pixabay（画像）
